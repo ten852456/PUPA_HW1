@@ -1,1 +1,39 @@
-<p>add-edit works!</p>
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Book name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="bookName"
+        placeholder="Enter Book Name">
+    </div>
+</div>
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Book Amount</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="bookAmount"
+        placeholder="Enter Book Name">
+    </div>
+</div>
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Book Pic url</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="bookPic_url"
+        placeholder="Enter Book Name">
+    </div>
+</div>
+<div class="form-group row">
+
+    <label class="col-sm-2 col-form-label">Book Price</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="bookPrice"
+        placeholder="Enter Book Name">
+    </div>
+</div>
+
+<button (click)="AddBook()" *ngIf="book.bookId==0" class="btn btn-primary">
+    Add
+</button>
+<button (click)="UpdateBook()" *ngIf="book.bokId!=0" class="btn btn-primary">
+    Update
+</button>
