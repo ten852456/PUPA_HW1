@@ -10,14 +10,14 @@ export class AddEditComponent implements OnInit {
 
   constructor(private service: SharedService) { }
   @Input() book: any;
-  bookId: number | undefined;
+  BookID: number | undefined;
   bookName: string | undefined;
-  bookAmount: number | undefined;
+  bookAmount: string | undefined;
   bookPic_url: string | undefined;
-  bookPrice: number | undefined;
+  bookPrice: string | undefined;
 
   ngOnInit(): void {
-    this.bookId = this.book.bookId;
+    this.BookID = this.book.BookID;
     this.bookName = this.book.bookName;
     this.bookAmount = this.book.bookAmount;
     this.bookPic_url = this.book.bookPic_url;
@@ -25,11 +25,10 @@ export class AddEditComponent implements OnInit {
   }
   AddBook() {
     var val = {
-      Id: this.bookId,
-      Bookname: this.bookName,
-      Amount: this.bookAmount,
-      Pic_url: this.bookPic_url,
-      Price: this.bookPrice
+      bookname: this.bookName,
+      amount: this.bookAmount,
+      pic_url: this.bookPic_url,
+      price: this.bookPrice
     }
     this.service.addBooklist(val).subscribe(res => {
       alert(res.toString());
@@ -37,7 +36,7 @@ export class AddEditComponent implements OnInit {
   }
   UpdateBook() {
     var val = {
-      Id: this.bookId,
+      id: this.BookID,
       Bookname: this.bookName,
       Amount: this.bookAmount,
       Pic_url: this.bookPic_url,

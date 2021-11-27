@@ -30,10 +30,9 @@
         placeholder="Enter Book Name">
     </div>
 </div>
-
-<button (click)="AddBook()" *ngIf="book.bookId==0" class="btn btn-primary">
+<button (click)="AddBook()" *ngIf="book.BookID==0" class="btn btn-primary">
     Add
 </button>
-<button (click)="UpdateBook()" *ngIf="book.bokId!=0" class="btn btn-primary">
+<button (click)="UpdateBook()" *ngIf="book.BookID!=0" class="btn btn-primary">
     Update
 </button>

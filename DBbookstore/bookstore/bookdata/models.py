@@ -4,8 +4,8 @@ from django.db import models
 
 class book(models.Model):
     bookname = models.CharField(max_length=30)
-    amount = models.IntegerField()
+    amount = models.CharField(max_length=10)
     pic_url = models.CharField(max_length=90)
-    price = models.IntegerField()
+    price = models.CharField(max_length=10)
     def __str__(self):
         return self.bookname
