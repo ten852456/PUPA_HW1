@@ -22,7 +22,7 @@ export class ShowComponent implements OnInit {
 
   addClick(){
     this.book={
-      BookID:0,
+      id:0,
       Bookname:""
     }
     this.ModalTitle="Add Book";
@@ -44,6 +44,15 @@ export class ShowComponent implements OnInit {
     this.service.getBooklist().subscribe(data=>{
       this.Bookviewlist = data;
     });
+  }
+
+  deleteClick(item: any){
+    if(confirm('Are you sure??')){
+      this.service.deleteBooklist(item.id).subscribe(data=>{
+        alert(data.toString());
+        this.refreshBooklist();
+      })
+    }
   }
 
 }

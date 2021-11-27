@@ -1,12 +1,12 @@
 from django.urls import include, path
-from rest_framework import routers
 from bookdata import views
+from django.conf.urls import url
 
-router = routers.DefaultRouter()
-router.register(r'Books', views.BookViewSet)
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include(router.urls)),
+    url(r'^books/$',views.bookApi),
+    url(r'^books/([0-9]+)$',views.bookApi),
 ]

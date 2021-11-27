@@ -15,10 +15,6 @@
             <div class="modal-body">
                 <app-add-edit [book]="book" *ngIf="ActivateAddEditBook"></app-add-edit>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
         </div>
     </div>
 </div>
@@ -42,7 +38,7 @@
                 >
                     Edit
                 </button>
-                <button type="button" class="btn btn-primary mr-1">delete</button>
+                <button type="button" class="btn btn-primary mr-1" (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">delete</button>
             </td>
         </tr>
     </tbody>

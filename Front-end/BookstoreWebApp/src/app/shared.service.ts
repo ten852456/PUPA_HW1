@@ -6,24 +6,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl = "http://localhost:8000/Books/"
+readonly APIUrl = "http://localhost:8000"
 
   constructor(private http:HttpClient) { }
 
   getBooklist():Observable<any[]> {
-    return this.http.get<any[]>(this.APIUrl);
+    return this.http.get<any[]>(this.APIUrl + '/books/');
   }
   addBooklist(val:any){
-    return this.http.post(this.APIUrl, val);
+    return this.http.post(this.APIUrl + '/books/', val);
   }
   updateBooklist(val:any){
-    return this.http.put(this.APIUrl, val);
+    return this.http.put(this.APIUrl + '/books/', val);
   }
   deleteBooklist(val:any){
-    return this.http.delete(this.APIUrl + val);
+    return this.http.delete(this.APIUrl + '/books/' + val);
   }
 
   getAllBooknames():Observable<any[]> {
-    return this.http.get<any[]>(this.APIUrl);
+    return this.http.get<any[]>(this.APIUrl + '/books/');
   }
 }
