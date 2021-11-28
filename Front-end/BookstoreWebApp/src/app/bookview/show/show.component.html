@@ -21,17 +21,18 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th>
+            <th></th>
             <th>Bookname</th>
-            <!-- <th>price</th>
-            <th>picture_url</th>
-            <th>price</th> -->
+            <th>Price (บาท)</th>
+            <th>Amount</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of Bookviewlist">
-            <td>{{dataItem.id}}</td>
+            <td><img src="{{dataItem.pic_url}}"style="width:120px;height:142px;"></td>
             <td>{{dataItem.bookname}}</td>
+            <td>{{dataItem.price}}</td>
+            <td>{{dataItem.amount}}</td>
             <td>
                 <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
                     data-bs-target="#exampleModal" (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false"
