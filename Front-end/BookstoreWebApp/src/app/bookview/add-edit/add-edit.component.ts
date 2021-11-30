@@ -35,13 +35,13 @@ export class AddEditComponent implements OnInit {
     });
   }
   UpdateBook() {
-    var val = {
+    var val = { 
       id: this.id,
       bookname: this.bookName,
       amount: this.bookAmount,
       pic_url: this.bookPic_url,
       price: this.bookPrice
-    }
+    } 
     this.service.updateBooklist(val).subscribe(res => {
       alert(res.toString());
     });
