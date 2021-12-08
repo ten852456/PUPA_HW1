@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SharedService } from 'src/app/shared.service'
 
 @Component({
@@ -7,7 +8,8 @@ import { SharedService } from 'src/app/shared.service'
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
-
+  faPlusCircle = faPlusCircle;
+  faSearch = faSearch;
   constructor(private service:SharedService) { }
 
   Bookviewlist:any=[];
@@ -15,6 +17,11 @@ export class ShowComponent implements OnInit {
   ModalTitle: string | undefined;
   ActivateAddEditBook:boolean = false;
   book:any;
+
+  BookIdFiltered:string="";
+  BookNameFiltered:string="";
+  BooklistwithoutFiltered:any=[];
+
 
   ngOnInit(): void {
     this.refreshBooklist();
@@ -43,6 +50,7 @@ export class ShowComponent implements OnInit {
   refreshBooklist(){
     this.service.getBooklist().subscribe(data=>{
       this.Bookviewlist = data;
+      this.BooklistwithoutFiltered=data;
     });
   }
 
@@ -53,6 +61,19 @@ export class ShowComponent implements OnInit {
         this.refreshBooklist();
       })
     }
+  }
+  filterfn(){
+    var bookIdFilter = this.BookIdFiltered;
+    var bookNameFilter = this.BookNameFiltered;
+
+    this.Bookviewlist = this.BooklistwithoutFiltered.filter(function (el: { id: { toString: () => string; }; bookname: { toString: () => string; }; }){
+      return el.id.toString().toLowerCase().includes(
+        bookIdFilter.toString().trim().toLowerCase()
+      )&&
+      el.bookname.toString().toLowerCase().includes(
+        bookNameFilter.toString().trim().toLowerCase()
+      )
+    })
   }
 
 }

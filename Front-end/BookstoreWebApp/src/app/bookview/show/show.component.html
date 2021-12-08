@@ -1,8 +1,3 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#exampleModal"
-    (click)="addClick()" data-backdrop="static" data-keyboard="false">
-    Add book
-</button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -10,7 +5,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                (click)="closeClick()"></button>
+                    (click)="closeClick()"></button>
             </div>
             <div class="modal-body">
                 <app-add-edit [book]="book" *ngIf="ActivateAddEditBook"></app-add-edit>
@@ -18,28 +13,47 @@
         </div>
     </div>
 </div>
+
+<!-- Searchbox -->
+<div style="box-shadow: 0 0 3px black;
+            -webkit-box-shadow: 2px 3px 8px #eee;
+            -moz-box-shadow: 2px 3px 8px #eee;
+            margin-top: 15px;">
+    <fa-icon [icon]="faSearch"></fa-icon>
+    หาชื่อหนังสือ
+    <input [(ngModel)]="BookNameFiltered" (keyup)="filterfn() " placeholder="ใส่ชื่อหนังสือ"
+        style="width: 90%; margin-left: 20px;">
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()"
+    data-backdrop="static" data-keyboard="false" style="float:right; margin: 10px;">
+    <fa-icon [icon]="faPlusCircle"></fa-icon>
+    &nbsp;เพิ่มหนังสือ
+</button>
 <table class="table table-striped">
     <thead>
         <tr>
             <th></th>
-            <th>Bookname</th>
+            <th>ชื่อหนังสือ</th>
             <th>Price (บาท)</th>
             <th>Amount</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let dataItem of Bookviewlist">
-            <td><img src="{{dataItem.pic_url}}"style="width:120px;height:142px;"></td>
+            <td><img src="{{dataItem.pic_url}}" style="width:120px;height:142px;"></td>
             <td>{{dataItem.bookname}}</td>
             <td>{{dataItem.price}}</td>
             <td>{{dataItem.amount}}</td>
             <td>
                 <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false"
-                >
+                    data-bs-target="#exampleModal" (click)="editClick(dataItem)" data-backdrop="static"
+                    data-keyboard="false">
                     Edit
                 </button>
-                <button type="button" class="btn btn-primary mr-1" (click)="deleteClick(dataItem)" data-backdrop="static" data-keyboard="false">delete</button>
+                <button type="button" class="btn btn-primary mr-1" (click)="deleteClick(dataItem)"
+                    data-backdrop="static" data-keyboard="false">delete</button>
             </td>
         </tr>
     </tbody>

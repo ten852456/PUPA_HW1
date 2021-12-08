@@ -1,6 +1,6 @@
 <div class="form-group row">
 
-    <label class="col-sm-2 col-form-label">Book name</label>
+    <label class="col-sm-2 col-form-label" style="margin-top: 5px; margin-bottom: 5px;">Book name :</label>
     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="bookName"
         placeholder="Enter Book Name">
@@ -8,26 +8,26 @@
 </div>
 <div class="form-group row">
 
-    <label class="col-sm-2 col-form-label">Book Amount</label>
+    <label class="col-sm-2 col-form-label" style="margin-top: 5px; margin-bottom: 5px;">Book Amount :</label>
     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="bookAmount"
-        placeholder="Enter Book Name">
+        placeholder="Enter Book Amount">
     </div>
 </div>
 <div class="form-group row">
 
-    <label class="col-sm-2 col-form-label">Book Pic url</label>
+    <label class="col-sm-2 col-form-label" style="margin-top: 5px; margin-bottom: 5px;">Book Pic url :</label>
     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="bookPic_url"
-        placeholder="Enter Book Name">
+        placeholder="Enter Book Pic url">
     </div>
 </div>
 <div class="form-group row">
 
-    <label class="col-sm-2 col-form-label">Book Price</label>
+    <label class="col-sm-2 col-form-label" style="margin-top: 5px; margin-bottom: 5px;">Book Price :</label>
     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="bookPrice"
-        placeholder="Enter Book Name">
+        placeholder="Enter Book Price">
     </div>
 </div>
 <button (click)="AddBook()" *ngIf="book.id==0" class="btn btn-primary float-right">
