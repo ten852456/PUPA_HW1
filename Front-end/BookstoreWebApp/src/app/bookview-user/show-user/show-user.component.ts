@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SharedService } from 'src/app/shared.service'
-
+declare let $: any;
 
 @Component({
   selector: 'app-show-user',
@@ -9,6 +9,12 @@ import { SharedService } from 'src/app/shared.service'
   styleUrls: ['./show-user.component.css']
 })
 export class ShowUserComponent implements OnInit {
+  @ViewChild('modal') modal:ElementRef;
+
+  showModal(){
+    // Show modal with jquery
+    $(this.modal.nativeElement).modal('show'); 
+}
   faPlusCircle = faPlusCircle;
   faSearch = faSearch;
   constructor(private service:SharedService) { }

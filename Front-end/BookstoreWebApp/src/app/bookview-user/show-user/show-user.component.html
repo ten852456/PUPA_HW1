@@ -13,6 +13,42 @@
         </div>
     </div>
 </div>
+<div id="feedback">
+    <a href="" data-toggle="modal" data-target="#modal"  (click)="showModal()">ยืมหนังสือ<i class="fas fa-tools"></i></a>
+</div>
+<div class="modal fade"  #modal id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">แจ้งยืมหนังสือ&nbsp;<i class="fas fa-hard-hat"></i></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+            <p><i class="fas fa-phone prefix grey-text"></i>&nbsp;ชื่อ</p>
+          <input type="text" id="form34" class="form-control validate" placeholder="enter your name">
+        </div>
+
+        <div class="md-form mb-5">
+          <p><i class="fas fa-phone prefix grey-text"></i>&nbsp;เบอร์โทรติดต่อ</p>
+          <input type="number" id="form29" class="form-control validate" placeholder="enter your phone numbers">
+        </div>
+
+        <div class="md-form">
+          <p><i class="fas fa-edit prefix grey-text"></i>&nbsp;ข้อความ</p>
+          <textarea type="text" id="form8" class="md-textarea form-control" rows="4" placeholder="enter your messages"></textarea>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-unique">ส่ง&nbsp;<i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Searchbox -->
 <div class="d-flex flew-row" style="box-shadow: 0 0 3px black;
