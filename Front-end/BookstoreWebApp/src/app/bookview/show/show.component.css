@@ -48,6 +48,7 @@ ul.hero-list li {
 }
 
 .button, .button-large, .button-modal, .button-small {
+    
     border: none;
     border-radius: 4px;
     display: inline-block;

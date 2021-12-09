@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faUsersCog } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,6 @@ import { faUsersCog } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'BookstoreWebApp';
   faUsersCog = faUsersCog;
+  faPlusCircle = faPlusCircle;
+  faSearch = faSearch;
 }

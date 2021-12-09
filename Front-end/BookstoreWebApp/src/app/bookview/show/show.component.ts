@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlusCircle, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faSearch, faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { SharedService } from 'src/app/shared.service'
 
 @Component({
@@ -8,8 +8,12 @@ import { SharedService } from 'src/app/shared.service'
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
+  //icon
   faPlusCircle = faPlusCircle;
   faSearch = faSearch;
+  faTrashAlt = faTrashAlt;
+  faEdit = faEdit;
+
   constructor(private service:SharedService) { }
 
   Bookviewlist:any=[];

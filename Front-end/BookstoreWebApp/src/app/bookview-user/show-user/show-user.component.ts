@@ -27,6 +27,10 @@ export class ShowUserComponent implements OnInit {
   ngOnInit(): void {
     this.refreshBooklist();
   }
+  showdata(item:any){
+    this.ModalTitle="Add Book";
+    this.ActivateAddEditBook=true;
+  }
 
   addClick(){
     this.book={

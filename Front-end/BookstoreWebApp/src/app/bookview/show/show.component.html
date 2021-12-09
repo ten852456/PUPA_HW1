@@ -15,15 +15,21 @@
 </div>
 
 <!-- Searchbox -->
-<div style="box-shadow: 0 0 3px black;
-            -webkit-box-shadow: 2px 3px 8px #eee;
-            -moz-box-shadow: 2px 3px 8px #eee;
-            margin-top: 15px;">
-    <fa-icon [icon]="faSearch"></fa-icon>
-    หาชื่อหนังสือ
+<div class="d-flex flew-row" style="box-shadow: 0 0 3px black;
+            -webkit-box-shadow: 2px 3px 8px rgb(175, 122, 122);
+            -moz-box-shadow: 2px 3px 8px rgb(156, 129, 129);
+            margin-top: 15px; margin-bottom: 15px; height: 40px;
+            border-radius: 5px;"
+            >
+    <div style="padding-top: 10px; padding-left: 5px">
+        <fa-icon [icon]="faSearch"></fa-icon>
+        หาชื่อหนังสือ
+    </div>
     <input [(ngModel)]="BookNameFiltered" (keyup)="filterfn() " placeholder="ใส่ชื่อหนังสือ"
         style="width: 90%; margin-left: 20px;">
 </div>
+<div style="text-align:center; padding:20px; font-size:large">รายชื่อหนังสือ</div>
+
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()"
@@ -34,7 +40,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th></th>
+            <th>รูป</th>
             <th>ชื่อหนังสือ</th>
             <th>Price (บาท)</th>
             <th>Amount</th>
@@ -47,13 +53,16 @@
             <td>{{dataItem.price}}</td>
             <td>{{dataItem.amount}}</td>
             <td>
-                <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
+            <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
                     data-bs-target="#exampleModal" (click)="editClick(dataItem)" data-backdrop="static"
-                    data-keyboard="false">
-                    Edit
+                    data-keyboard="false" style="margin: 5px; min-height: 30px; min-width: 30px;">
+                    <fa-icon [icon]="faTrashAlt"></fa-icon>
                 </button>
+                <br>
                 <button type="button" class="btn btn-primary mr-1" (click)="deleteClick(dataItem)"
-                    data-backdrop="static" data-keyboard="false">delete</button>
+                    data-backdrop="static" data-keyboard="false" style="margin: 5px; min-height: 30px; min-width: 30px;">
+                    <fa-icon [icon]="faEdit"></fa-icon>
+                </button>
             </td>
         </tr>
     </tbody>

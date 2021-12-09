@@ -15,17 +15,21 @@
 </div>
 
 <!-- Searchbox -->
-<div style="box-shadow: 0 0 3px black;
-            -webkit-box-shadow: 2px 3px 8px #eee;
-            -moz-box-shadow: 2px 3px 8px #eee;
-            margin-top: 15px;">
-    <fa-icon [icon]="faSearch"></fa-icon>
-    หาชื่อหนังสือ
+<div class="d-flex flew-row" style="box-shadow: 0 0 3px black;
+            -webkit-box-shadow: 2px 3px 8px rgb(175, 122, 122);
+            -moz-box-shadow: 2px 3px 8px rgb(156, 129, 129);
+            margin-top: 15px; margin-bottom: 15px; height: 40px;
+            border-radius: 5px;"
+            >
+    <div style="padding-top: 10px; padding-left: 5px">
+        <fa-icon [icon]="faSearch"></fa-icon>
+        หาชื่อหนังสือ
+    </div>
     <input [(ngModel)]="BookNameFiltered" (keyup)="filterfn() " placeholder="ใส่ชื่อหนังสือ"
         style="width: 90%; margin-left: 20px;">
 </div>
 
-<!-- Button trigger modal -->
+<!-- table viwe
 <table class="table table-striped">
     <thead>
         <tr>
@@ -41,4 +45,21 @@
             <td>{{dataItem.price}}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
+<div style="text-align:center; padding:20px; font-size:large">รายชื่อหนังสือ</div>
+<!-- card view -->
+<div class="row row-cols-1 row-cols-md-3 g-4" style="z-index:-1">
+    <div class="col" *ngFor="let dataItem of Bookviewlist">
+      <div class="card h-100 border-primary" (click)="showdata(dataItem)">
+        <img src="{{dataItem.pic_url}}" class="card-img-top" alt="..." style="min-width:240px; min-height: 240px;">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align: center;">{{dataItem.bookname}}</h5>
+          <p class="card-text" style="text-align: center;"> ราคา : {{dataItem.price}} บาท</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
